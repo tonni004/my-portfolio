@@ -1,0 +1,377 @@
+@import '../Styles/variables';
+
+.AboutMeSection {
+    @media screen and (max-width: 1179px) {
+            padding: 0 10px;
+        }
+}
+.SectionTitle{
+    margin-bottom: 80px;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.AboutMeInfoField {
+    width: 600px;
+
+    @media screen and (max-width: 1179px) {
+        width: 100%;
+    }
+}
+
+
+.AboutMeField{
+    display: flex;
+    justify-content: space-between;
+}
+
+.AboutMeText{
+    margin-bottom: 20px;
+    line-height: 25px;
+
+    @media screen and (max-width: 1179px) {
+        font-size: 17px;
+    }
+}
+
+.BoldSpan {
+    font-weight: bold;
+}
+
+// social media block
+
+.ContactsDiv {
+    padding: 25px 0px;
+    margin-top: 60px;
+    position: relative;
+    width: 100%;
+
+    &::before {
+        position: absolute;
+        top: -0.6rem;
+        left: 0;
+        
+        content: '';
+        display: block;
+        width: 73%;
+        height: 1px;
+        
+        background-color: rgba(143, 148, 251, 0.72);
+        box-shadow: 0px 0px 12px 1px rgba(143, 148, 251, 0.32);
+
+        @media screen and (max-width: 767px) {
+            width: 57%;
+        }
+    }
+
+    &:after {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    
+    content: 'Find me on social media!';
+    font-size: 13px;
+    color: $accent-color;
+    }
+}
+
+.ContactList {
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+    transition: all 0.2s linear 0.2s;
+
+    & li:not(:last-child) {
+        margin-right: 20px;
+    }
+
+    & a {
+        width: 30px;
+        height: 30px;
+    }
+}
+.ContactItem{
+    border-radius: 50%;
+    transform: translateZ(0);
+    transition: all 0.4s ease;
+
+    svg {
+        width: 30px;
+        height: 30px;
+        fill: $dark-vilolet;
+    }
+
+    &.dark svg{
+        fill: $accent-color;
+    }
+}
+.ContactItem:hover,
+.ContactItem:focus {
+    & .ContactIcon{
+            animation-name: icon-float, icon-animation;
+            animation-duration: .3s, 1.5s;
+            animation-delay: 0s, .3s;
+            animation-timing-function: ease-out, ease-in-out;
+            animation-iteration-count: 1, infinite;
+            animation-fill-mode: forwards;
+           animation-direction: normal, alternate;
+
+        }
+    }
+
+
+// Card
+
+.CardFlipArticle {
+    width: 450px;
+    height: 300px;
+    perspective: 1000px;
+
+    &:focus {
+        outline: 0;
+    }
+
+    @media screen and (max-width: 1179px){
+        display: none;
+    }
+}
+
+.AboutMeCard {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+
+    .CardFlipArticle:hover &,
+    .CardFlipArticle:focus & {
+        transform: rotateY(180deg);
+    }
+}
+
+.FlipCardFront,
+.FlipCardBack {
+    border: 1px solid rgb(143, 148, 251, 0.5);
+    border-radius: 25px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: $white-color;
+    box-shadow: 0px 0px 20px 0px rgb(143, 148, 251, 0.3);
+
+    &.dark {
+    background-color: #4e54c8;
+    }
+}
+
+.FlipCardFront {
+    z-index: 2;
+
+    & svg {
+            fill: $dark-purple;
+        }
+        
+    &.dark svg {
+            fill: $white-color;
+        }
+    
+}
+
+.FlipCardBack {
+    transform: rotateY(180deg);
+    z-index: 1;
+
+    & .MemeImg {
+        border-radius: $border-radius;
+        width: 100%;
+        height: 100%;
+    }
+    
+}
+
+.TypingDiv {    
+    margin-top: 40px;
+    margin-left: 30px;
+    width: 270px;
+}
+
+.CardText{
+    font-size: 18px;
+    overflow: hidden;
+    border-right: .15em solid $accent-color;
+    white-space: nowrap;
+    animation:
+            typing 3.5s steps(30, end),
+            blink-caret .5s step-end infinite;
+}
+
+
+.CardPhoto {
+    position: absolute;
+    bottom: 0;
+    left: 80px;
+}
+.CardImage{
+    position: absolute;
+    bottom: 70px;
+    right: 60px;
+    transform: rotate(10deg);
+    
+    width: 100px;
+    height: 100px;   
+}
+
+
+// Skills
+
+.SkillsField {
+
+    @media screen and (max-width: 1179px) {
+            & div {
+                margin-bottom: 60px;
+            }
+        }
+
+     @media screen and (min-width: $desktop) {
+        display: flex;
+        justify-content: space-evenly;
+
+        & div {
+                padding: 20px;
+            }
+    }
+
+}
+
+.DivTitle {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+    font-family: "Inter",
+            sans-serif;
+}
+
+.DivText {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.GrayText {
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-size: 15px;
+    font-weight: 100;
+
+    @media screen and (min-width: $tablet) and (max-width: 1179px) {
+            font-size: 14px;
+    }
+}
+
+.YearsText {
+    margin-top: 15px;
+    text-align: end;
+    font-size: 12px;
+    font-weight: 100;
+}
+.LanguageField {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 1179px){
+        margin: 0 auto;
+    }
+}
+.LanguageList  {
+        display: flex;
+
+    & li {
+        position: relative;
+        padding-left: 25px;            
+    }
+
+        @media screen and (max-width: 767px) {
+            display: block;
+            margin: 0 auto;
+        }  
+
+    @media screen and (max-width: 1179px) {
+        justify-content: center;
+        flex-direction: row;
+    }
+     
+}
+
+.LanguageList li::before{
+    content: "💜";
+    position: absolute;
+    left: 0px;
+}
+
+.LanguageList li:not(:last-child) {
+
+    @media screen and (max-width: 767px) {
+            margin-bottom: 25px;
+        }
+
+    @media screen and (min-width: $tablet) {
+        margin-right: 50px;
+    }
+}
+
+.EducationField {
+    @media screen and (min-width:$tablet) and (max-width: 1179px) {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+            width: 70%;
+    }
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: $accent-color
+    }
+}
+
+/* Icon Animation */
+
+@keyframes icon-animation {
+    0% {
+        transform: translateY(-8px);
+    }
+
+    50% {
+        transform: translateY(-4px);
+    }
+
+    100% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes icon-float {
+    100% {
+        transform: translateY(-8px);
+    }
+}

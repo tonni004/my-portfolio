@@ -1,0 +1,31 @@
+$mobile: 480px;
+$tablet: 768px;
+$desktop: 1180px;
+
+// white card
+$card-border: 2px solid hsla(0, 0%, 89%, 0.482);
+$box-shadow:0px 0px 20px 0px rgba(255, 255, 255, 0.32);
+$card-background: rgba(255, 255, 255, 0.197);
+$border-radius: 25px;
+
+// violet card
+$violet-border: 2px solid rgba(143, 148, 251, 0.5);
+$violet-shadow: 0px 0px 20px 0px rgba(143, 148, 251, 0.3);
+$before-shadow: 0px 0px 12px 1px rgba(143, 148, 251, 0.32);
+
+// colors
+$accent-color:#8f94fb;
+$dark-vilolet: #4e54c8d7;
+$dark-plum:#4146b1;
+$dark-purple:#4e54c8;
+$white-color: #ffffff;
+
+// skills icon
+$large: 100px;
+$medium: 60px;
+$small: 25px;
+
+$white-skills-icon: rgba(255, 255, 255, 0.195);
+
+// dark theme
+$dark-body-color: rgb(36, 36, 36);

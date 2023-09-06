@@ -1,0 +1,195 @@
+@import '../Styles/variables';
+.BioField{
+    border: $card-border;
+    border-radius: 25px;
+
+    position: absolute;
+    z-index: 2;
+    font-family: 'Nunito', sans-serif;
+
+    background-color: $card-background;
+    box-shadow: $box-shadow;
+
+    @media screen and (max-width: 1179px) {
+        width: 70%;
+        padding: 35px 25px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        
+    }
+     @media screen and (min-width: $tablet) and (max-width: 1179px) {
+        padding: 40px 50px;
+        width: 50%;
+
+        @media (orientation: landscape) {
+                & {
+                    margin-top: 180px;
+                }
+            }
+        
+        @media (orientation: portrait) {
+                & {
+                    margin-top: -200px;
+                }
+            }
+        
+    }
+    @media screen and (min-width: $desktop) {
+        top: 250px;
+        left: 330px;
+        padding: 50px 50px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 500px;
+        height: 200px;
+
+    }
+}
+
+
+.Photo{
+    display: block;
+    border-radius: 50%;
+
+    @media screen and (max-width: 1179px) {
+            margin-bottom: 20px;
+    }
+
+    @media screen and (min-width: $desktop) {
+        margin-right: 45px;
+    }
+}
+
+.InfoText {
+    position: relative;
+    margin-top: 20px;
+    color: $white-color;
+    font-size: 16px;
+    line-height: 25px;
+    
+
+    @media screen and (min-width: $desktop) {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    
+}
+
+.FlipContainer {
+    margin:0 5px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.469);
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    width: 162px;
+    height: 21px;
+    
+}
+
+
+.FlipContainer span {
+    position: absolute;
+    top:0;
+    white-space: nowrap;
+    opacity: 0;
+    animation: rotate-word 10s linear infinite;
+}
+
+.FlipContainer span:nth-child(2) {
+    animation-delay: 2.5s;
+}
+
+.FlipContainer span:nth-child(3) {
+    padding-left: 0px;
+    animation-delay: 5s;
+}
+
+
+@-webkit-keyframes rotate-word {
+    0% {
+        opacity: 0;
+    }
+
+    1% {
+        transform: translateY(-10px);
+    }
+
+    4% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    17% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    19% {
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(10px);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotate-word {
+    0% {
+        opacity: 0;
+    }
+
+    1% {
+        transform: translateY(-20px);
+    }
+
+    4% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    17% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    19% {
+        opacity: 0;
+    }
+
+    20% {
+        transform: translateY(20px);
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
