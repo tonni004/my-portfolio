@@ -167,7 +167,7 @@ export default function MyProjects() {
                 <div className={s.LinkField}>
                   <a
                     className={s.IconLink}
-                    href="https://github.com/tonni004/portfolio"
+                    href="https://github.com/tonni004/my-portfolio"
                     target="_blank"
                     rel="noreferrer"
                   >
