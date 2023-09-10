@@ -52,7 +52,7 @@ export default function MySkills() {
   });
 
   return (
-    <div id="myskills">
+    <section id="myskills">
       <Section>
         <div className={classNames(s.MySkillsSection, s[bigField])}>
           {isClicked ? (
@@ -67,7 +67,7 @@ export default function MySkills() {
               </div>
               <Container>
                 <h2 className={s.AnimationTitle}>
-                  Skills, tools & technologist
+                  Skills, Tools & Technologies
                 </h2>
 
                 <ul
@@ -175,6 +175,6 @@ export default function MySkills() {
           )}
         </div>
       </Section>
-    </div>
+    </section>
   );
 }

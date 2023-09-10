@@ -84,20 +84,37 @@
 }
 
 .FlipContainer {
-    margin:0 5px;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.469);
+    padding-bottom: 1px;
+    margin:0 6px;
     position: relative;
     overflow: hidden;
     display: inline-block;
     width: 162px;
-    height: 21px;
+    height: 22px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.469);
+    }
+
+    @media screen and (max-width: 767px) {
+        width: 134px;
+    }
+
+    @media screen and (min-width:$tablet) and (max-width: 1179px){
+       margin: 0;
+       width: 142px;
+
+    }
     
 }
 
-
 .FlipContainer span {
     position: absolute;
-    top:0;
+    bottom: -5px;
     white-space: nowrap;
     opacity: 0;
     animation: rotate-word 10s linear infinite;

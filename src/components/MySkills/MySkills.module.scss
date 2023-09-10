@@ -65,9 +65,9 @@
         color: brown;
 
         @media screen and (max-width: 767px) {
-                top: 3%;
+                top: 2%;
                 left: 35%;
-                font-size: 28px;
+                font-size: 30px;
             }
 
         @media screen and (min-width:$tablet) and (max-width: 1179px){
@@ -80,12 +80,12 @@
         top: 50px;
         left: 640px;
         font-size: 45px;
-        color: $dark-vilolet;
+        color: $dark-violet;
 
         @media screen and (max-width: 767px) {
-            font-size: 24px;
-                top: 13%;
-                left: 59%;
+                font-size: 24px;
+                top: 12%;
+                left: 54%;
             }
         @media screen and (min-width:$tablet) and (max-width: 1179px){
             top: 12%;
@@ -157,7 +157,7 @@
     font-size: 18px;
 
     background-color: transparent;
-    color: $dark-vilolet;
+    color: $dark-violet;
 
     cursor: pointer;
     transition: all 0.5s;

@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import s from './AboutMe.module.scss';
 import Container from 'components/Container';
 import Section from 'components/Section';
+
 // svg icon
 import { ReactSVG } from 'react-svg';
 import Arrow from '../../images/svg/swirl-arrow-top-right-icon.svg';
@@ -22,7 +23,7 @@ export default function AboutMe() {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <div id="aboutme" className={s.AboutMeSection}>
+    <section id="aboutme" className={s.AboutMeSection}>
       <Container>
         <Section>
           <motion.h2
@@ -46,34 +47,39 @@ export default function AboutMe() {
               className={s.AboutMeInfoField}
             >
               <p className={s.AboutMeText}>
-                I started my journey in programming not so long ago, but I know
-                how to center a <span className={s.BoldSpan}>&lt;div&gt; </span>
+                I embarked on my programming journey not too long ago, and I'm
+                proud to say that I can center a{' '}
+                <span className={s.BoldSpan}>&lt;div&gt; </span>
                 without googling, haha..
               </p>
               <p className={s.AboutMeText}>
-                {' '}
                 I'd say I'm more of a frontend-focused person. Writing in{' '}
                 <span className={s.BoldSpan}>JavaScript</span> and creating cool
                 designs with <span className={s.BoldSpan}>Sass</span> is really
-                satisfying for me. It gives me pleasure to experiment with
-                animations and visual effects. I enjoy working with{' '}
-                <span className={s.BoldSpan}>React.js</span>. All my coding
-                knowledge, I earned through hard work. I do everything in my
-                power to ensure the final result satisfies my creative soul.
-                It's a hobby that has grown into a dream with which I want to
-                shape my future life.
+                satisfying for me. I derive immense pleasure from experimenting
+                with animations and visual effects, and my enthusiasm for
+                working with <span className={s.BoldSpan}>React.js</span> knows
+                no bounds. I've earned all my coding knowledge through hard
+                work, and I put in every effort to ensure that the final outcome
+                satisfies my creative spirit. This hobby has blossomed into a
+                dream that I'm determined to shape my future with.
               </p>
 
               <p className={s.AboutMeText}>
-                Unfortunately, I haven't participated in commercial projects
-                yet, but I really want to do that. For now, I have to express my
-                creativity through my own pet projects.
+                While I'm looking forward to gaining experience in commercial
+                projects, I focus on expressing my creativity through pet
+                projects.
               </p>
 
               <div className={s.ContactsDiv}>
                 <ul className={s.ContactList}>
                   <li className={classNames(s.ContactItem, s[theme])}>
-                    <a href="https://t.me/t_onni" aria-label="Me on Telegram">
+                    <a
+                      href="https://t.me/t_onni"
+                      aria-label="Me on Telegram"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <ReactSVG className={s.ContactIcon} src={Telegram} />
                     </a>
                   </li>
@@ -81,6 +87,8 @@ export default function AboutMe() {
                     <a
                       href="https://www.instagram.com/t.onni_/"
                       aria-label="Me on Instagram"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <ReactSVG className={s.ContactIcon} src={Instagram} />
                     </a>
@@ -89,6 +97,8 @@ export default function AboutMe() {
                     <a
                       href="https://github.com/tonni004"
                       aria-label="Me on Github"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <ReactSVG className={s.ContactIcon} src={Github} />
                     </a>
@@ -97,6 +107,8 @@ export default function AboutMe() {
                     <a
                       href="https://www.linkedin.com/in/tanya-baletska-06377828a/"
                       aria-label="Me on LinkedIn"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <ReactSVG className={s.ContactIcon} src={LinkedIn} />
                     </a>
@@ -189,6 +201,6 @@ export default function AboutMe() {
           </motion.div>
         </Section>
       </Container>
-    </div>
+    </section>
   );
 }
