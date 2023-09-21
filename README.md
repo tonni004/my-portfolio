@@ -1,6 +1,6 @@
 # Portfolio
 
-[Demo link](https://sprightly-faun-7f2354.netlify.app/)
+[Demo link](https://portfolio-tonni004.netlify.app)
 
 The "Portfolio" project is a personal website created to showcase myself as an
 individual, my programming skills, and the technologies I can utilize. This
