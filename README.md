@@ -1,11 +1,13 @@
 # Portfolio
 
-[Project demo link](https://sprightly-faun-7f2354.netlify.app/)
+[Demo link](https://sprightly-faun-7f2354.netlify.app/)
 
 The "Portfolio" project is a personal website created to showcase myself as an
 individual, my programming skills, and the technologies I can utilize. This
 platform is designed to share my professional information with visitors, express
 my expertise, and demonstrate personal works and projects.
+
+![Screenshot](https://github.com/tonni004/my-portfolio/blob/main/src/images/portfolio-static.jpg)
 
 ## Bio
 
@@ -25,3 +27,5 @@ them updated on the latest technologies.
 The "Projects" section showcases my major works and projects that I have been
 involved in. Each project is accompanied by a short description, images, and the
 ability to access project details.
+
+![Gif](https://github.com/tonni004/my-portfolio/blob/main/src/images/portfolio.gif)

@@ -73,6 +73,16 @@ export default function AnchorButtons() {
             <span>P</span>
           </a>
         </li>
+        <li>
+          <a
+            className={classNames(s.ButtonLink, s[theme], {
+              [s.active]: currentSection === 'mycontact',
+            })}
+            href="#mycontact"
+          >
+            <span>C</span>
+          </a>
+        </li>
       </ul>
     </div>
   );

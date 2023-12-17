@@ -10,6 +10,7 @@ import AboutMe from './AboutMe';
 import MySkills from './MySkills';
 import MyProjects from './MyProjects';
 import Footer from './Footer';
+import Form from './Form';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -34,6 +35,7 @@ export default function App() {
             <AboutMe />
             <MySkills />
             <MyProjects />
+            <Form />
             <Footer />
           </>
         )}

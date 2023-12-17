@@ -1,0 +1,296 @@
+@import '../Styles/variables.scss';
+.Section {
+    padding-top: 100px;
+    padding-bottom: 150px;
+
+    @media screen and (min-width:$desktop) {
+        padding-top: 170px;
+    }
+}
+
+.FormSection {
+    margin: 0 auto;
+
+    @media screen and (min-width:$desktop){
+        display: flex;
+        justify-content: space-between;
+    }
+    
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.DecorateField {
+    position: relative;
+    @media screen and (min-width:$desktop) {margin-right: 50px;}
+
+    div {
+        margin-bottom: 50px;
+        position: relative;
+        perspective: 166px;
+        font-family: Nunito, sans-serif;
+        font-size: 17px;
+        font-weight: 600;
+
+        @media screen and (min-width:$tablet) {
+            padding-bottom: 30px;
+            display: flex;
+            align-items: flex-end;
+        }
+        
+
+        .RorateTitle {
+            margin-right: 15px;
+            text-transform: uppercase;
+            font-size: 58px;
+            font-family: Nunito, sans-serif;
+            font-weight: 900;
+            transform: rotateX(22deg) rotateY(0deg);
+            transform-style: preserve-3d;
+
+            @media screen and (max-width: 1179px) {width: 50%}
+            
+        }
+
+        .StaticText {
+            @media screen and (max-width: 767px) {
+                position: absolute;
+                    top: 103px;
+                    right: 6%;
+                }
+            @media screen and (min-width:$tablet) and (max-width: 1179px) {
+                position: absolute;
+                top: 50px;
+                right: 25%;
+
+            }
+                                                
+        }
+  
+        .PositionText {
+            position: absolute;
+            top:70px;
+            right: 40px;
+
+            @media screen and (max-width: 767px) {
+                top: 128px;
+                right: 0px;
+            }
+
+            @media screen and (min-width:$tablet) and (max-width: 1179px) {
+                top:75px;
+                right: 15%;
+            }
+
+        }
+        
+    }
+
+    .Circle {
+        position: absolute;
+        top: 10px;
+        left: 52%;
+        border: 2px solid $accent-color;
+        border-radius: 50%;
+        transform-origin: top left;
+        transform: scale(0) translate(-50%, -50%);
+        animation: circle 5s ease-in forwards infinite;
+
+        @media screen and (min-width:$tablet) and (max-width: 1179px){
+            top:12px;
+            left: 39%;
+        }
+    }
+
+    .InformationField {
+        padding-left:40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+            width: 330px;
+            line-height: 25px;
+            @media screen and (min-width:$tablet) and (max-width: 1179px) {
+                width: 60%;
+            }
+        }
+
+        .Avatar {
+            width: 190px;
+            height: 170px;
+
+            @media screen and (max-width: 1179px) {
+                    margin-bottom: 60px;
+                }
+        }
+
+        @media screen and (max-width: 1179px) {
+            padding-left: 0px;
+            flex-direction: column-reverse;
+        }
+
+    }
+}
+
+.Form {
+    margin-bottom: 25px;
+    width: 100%;
+    
+    @media screen and (min-width: $tablet) {
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    div {
+        position: relative;
+        width: 100%;
+
+        @media screen and (min-width:$tablet) and (max-width: 1179px) {
+            width: 60%;
+        }
+
+        @media screen and (min-width: $desktop) {width: 80%;}
+    }
+
+    & div:first-child {
+        margin-bottom: 10px;
+        @media screen and (min-width: $tablet) {
+            margin-bottom: 0px;
+            margin-right: 15px;
+        } 
+    }
+
+    label {
+        position: absolute;
+        top: 50%;
+        left: 3%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease;
+
+        color: $form-text-color;
+    }
+
+    input {
+        padding-top: 15px;
+        border: none;
+        border-bottom: 2px solid hsla(0, 0%, 89%, 0.482);
+
+        height: 35px;
+        width: 97%;
+
+        font-size: 17px;
+
+        background-color: transparent;
+        color: $form-text-color;
+        transition: border 0.3s ease;
+        
+        &:focus {
+            outline: none;
+            border-bottom: 2px solid $dark-violet;
+        }
+
+        &:focus~label,
+        &:not(:placeholder-shown)~label{
+            top: 25%;
+            font-size: 12px;
+            color: $accent-color;
+
+            @media screen and (max-width: 1179px) {
+                top:15%;
+            }    
+        }
+
+        @media screen and (min-width:$tablet) and (max-width: 1179px) {
+            width: 97%;
+        }
+    }
+
+    &.dark input,
+    &.dark label {
+        color: rgb(205, 205, 205);
+    }
+}
+
+.MessageField {
+    padding: 15px;
+    border: $card-border;
+    border-radius: 10px;
+    width: 84vw;
+    height: 180px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    background-color: transparent;
+    color: $form-text-color;
+    resize: none;
+    transition: border 0.3s ease;
+
+    &:focus {
+        outline: none;
+        border: $form-focus-border;
+    }
+
+    &.dark {
+        color: rgb(205, 205, 205);
+    }
+
+    @media screen and (min-width:$tablet) and (max-width: 1179px) {
+    width: 86vw;
+    }
+
+
+    @media screen and (min-width: $desktop) {
+        width: 450px;
+    }
+}
+
+.SubmitButton {
+    border: none;
+    border-radius: $border-radius;
+    margin-top: 40px;
+    display: inline-block;
+    width: 140px;
+    height: 42px;
+
+    font-size: 17px;
+
+    background-color: $accent-color;
+    color: $white-color;
+
+    transition: background-color 0.3s ease;
+
+    &:hover,
+    &:focus {
+        background-color: $dark-violet;
+    }
+
+    &.dark {
+        background-color: $dark-violet;
+
+        &:hover,
+        &:focus {
+            background-color: $dark-plum;
+        }
+    }
+
+        @media screen and (min-width: $desktop) {
+            margin-top: 20px;
+        }
+}
+
+@keyframes circle {
+    from {
+        transform: scale(0) translate(-50%, -50%);
+        opacity: 0.6;
+    }
+
+    to {
+        transform: scale(20) translate(-50%, -50%);
+        opacity: 0;
+    }
+}
