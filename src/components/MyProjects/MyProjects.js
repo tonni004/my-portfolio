@@ -21,11 +21,11 @@ import ReactProductCatalogGif from '../../images/react-product-catalog.gif';
 export default function MyProjects() {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  const [showGif, setShowGif] = useState(false);
+  // const [showGif, setShowGif] = useState(false);
 
-  const toggleGif = () => {
-    setShowGif(!showGif);
-  };
+  // const toggleGif = () => {
+  //   setShowGif(!showGif);
+  // };
 
   return (
     <section ref={ref} className={s.MyProjectsField} id="myprojects">
@@ -69,8 +69,6 @@ export default function MyProjects() {
                   Motion, Mobile first version."
                 githubLink="https://github.com/tonni004/ex-book-change-app"
                 demoLink="https://ex-book-change.netlify.app/"
-                showGif={showGif}
-                toggleGif={toggleGif}
                 gif={ExBookChangeGif}
                 staticImage={ExBookChangeStatic}
                 gifFieldPosition="odd"
@@ -89,8 +87,6 @@ The product details page enables users to select available colors, memory capaci
                   Router, Sass, JavaScript, Responsive Design."
                 githubLink="https://github.com/tonni004/react_phone-catalog"
                 demoLink="https://tonni004.github.io/react_phone-catalog/"
-                showGif={showGif}
-                toggleGif={toggleGif}
                 gif={ReactProductCatalogGif}
                 staticImage={ReactProductCatalogStatic}
                 gifFieldPosition="even"
@@ -113,8 +109,6 @@ The product details page enables users to select available colors, memory capaci
                   Motion, Responsive Design."
                 githubLink="https://github.com/tonni004/phonebook-app"
                 demoLink="https://tonni004.github.io/phonebook-app/"
-                showGif={showGif}
-                toggleGif={toggleGif}
                 gif={PhonebookGif}
                 staticImage={PhonebookStatic}
                 gifFieldPosition="odd"
@@ -132,8 +126,6 @@ The product details page enables users to select available colors, memory capaci
                   React Router DOM, Framer Motion, NextUI."
                 githubLink="https://github.com/tonni004/movie-search-app"
                 demoLink="https://tonni004.github.io/movie-search-app/"
-                showGif={showGif}
-                toggleGif={toggleGif}
                 gif={MovieSearchGif}
                 staticImage={MovieSearchStatic}
                 gifFieldPosition="even"
@@ -155,8 +147,6 @@ The product details page enables users to select available colors, memory capaci
                   Framer Motion, Responsive Design."
                 githubLink="https://github.com/tonni004/react_phone-catalog"
                 demoLink="https://tonni004.github.io/react_phone-catalog/"
-                showGif={showGif}
-                toggleGif={toggleGif}
                 gif={PortfolioGif}
                 staticImage={PortfolioStatic}
                 gifFieldPosition="odd"

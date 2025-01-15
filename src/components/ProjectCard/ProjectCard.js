@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { ReactSVG } from 'react-svg';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
@@ -17,13 +17,16 @@ export default function ProjectCard({
   technologies,
   githubLink,
   demoLink,
-  showGif,
-  toggleGif,
   gif,
   staticImage,
   gifFieldPosition,
 }) {
   const { theme } = useContext(ThemeContext);
+  const [showGif, setShowGif] = useState(false);
+
+  const toggleGif = () => {
+    setShowGif(!showGif);
+  };
 
   return (
     <div className={classNames(s.CardField, s[theme])}>
@@ -78,7 +81,5 @@ ProjectCard.propTypes = {
   technologies: PropTypes.string.isRequired,
   githubLink: PropTypes.string.isRequired,
   demoLink: PropTypes.string.isRequired,
-  showGif: PropTypes.bool.isRequired,
-  toggleGif: PropTypes.func,
   gifFieldPosition: PropTypes.string,
 };
