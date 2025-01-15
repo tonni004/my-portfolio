@@ -99,7 +99,12 @@ export default function Navigate() {
                 </a>
               </li>
               <li className={s.NavItem}>
-                <a className={s.NavLink} href="# " target="_blank">
+                <a
+                  className={s.NavLink}
+                  href="https://drive.google.com/file/d/1pwrOSA1UXfNecsBq13RNPQmFNMDamkg1/view?usp=sharing"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Resume
                 </a>
               </li>

@@ -40,8 +40,8 @@ export default function AboutMe() {
           <motion.div ref={ref} className={s.AboutMeField}>
             <motion.div
               style={{
-                transform: isInView ? 'scale(1)' : 'scale(0.5)',
-                opacity: isInView ? 1 : 0,
+                transform: isInView ? 'scale(1)' : 'scale(0.6)',
+                opacity: isInView ? 1 : 0.5,
                 transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
               }}
               className={s.AboutMeInfoField}
@@ -83,7 +83,7 @@ export default function AboutMe() {
                       <ReactSVG className={s.ContactIcon} src={Telegram} />
                     </a>
                   </li>
-                  <li className={classNames(s.ContactItem, s[theme])}>
+                  {/* <li className={classNames(s.ContactItem, s[theme])}>
                     <a
                       href="https://www.instagram.com/t.onni_/"
                       aria-label="Me on Instagram"
@@ -92,7 +92,7 @@ export default function AboutMe() {
                     >
                       <ReactSVG className={s.ContactIcon} src={Instagram} />
                     </a>
-                  </li>
+                  </li> */}
                   <li className={classNames(s.ContactItem, s[theme])}>
                     <a
                       href="https://github.com/tonni004"
@@ -178,12 +178,12 @@ export default function AboutMe() {
               <ul className={s.LanguageList}>
                 <li>
                   <p>Ukrainian</p>
-                  <p className={classNames(s.GrayText)}>Native language</p>
+                  <p className={classNames(s.GrayText)}>Native</p>
                 </li>
 
                 <li>
                   <p>English</p>
-                  <p className={s.GrayText}>Limited working proficiency</p>
+                  <p className={s.GrayText}>Upper-Intermediate</p>
                 </li>
               </ul>
             </div>

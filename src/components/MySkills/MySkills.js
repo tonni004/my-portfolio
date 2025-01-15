@@ -145,8 +145,8 @@ export default function MySkills() {
               <motion.div
                 ref={ref}
                 style={{
-                  transform: isInView ? 'scale(1)' : 'scale(0.6)',
-                  opacity: isInView ? 1 : 0,
+                  transform: isInView ? 'scale(1)' : 'scale(0.9)',
+                  opacity: isInView ? 1 : 0.4,
                   transition: 'all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1) 0.3s',
                 }}
                 className={s.BeforeAnimationField}
