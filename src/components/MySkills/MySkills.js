@@ -27,6 +27,23 @@ import Avatar from '../../images/card-photo2.png';
 
 import { ThemeContext } from 'components/BodyTheme/BodyTheme';
 
+const skills = [
+  { icon: React, name: 'React', size: 'Large' },
+  { icon: JavaScript, name: 'JavaScript', size: 'Large' },
+  { icon: Bootstrap, name: 'Bootstrap', size: 'Small' },
+  { icon: Css, name: 'CSS', size: 'Large' },
+  { icon: Figma, name: 'Figma', size: 'Small' },
+  { icon: Git, name: 'Git', size: 'Small' },
+  { icon: Github, name: 'Github', size: 'Small' },
+  { icon: Html, name: 'HTML5', size: 'Large' },
+  { icon: Redux, name: 'Redux', size: 'Medium' },
+  { icon: ResponsiveDesign, name: 'Responsive Design', size: 'Medium' },
+  { icon: RestApi, name: 'REST Api', size: 'Medium' },
+  { icon: Sass, name: 'Sass', size: 'Medium' },
+  { icon: ReactRouter, name: 'ReactRouter', size: 'Medium' },
+  { icon: VsCode, name: 'VsCode', size: 'Medium' },
+];
+
 export default function MySkills() {
   const { theme } = useContext(ThemeContext);
   const [isClicked, setIsClicked] = useState(false);
@@ -44,12 +61,12 @@ export default function MySkills() {
   };
 
   useEffect(() => {
-    if (animation === 'animate') {
-      setTimeout(() => {
-        setAnimation('pulse');
-      }, 7000);
-    }
-  });
+    const timer = setTimeout(() => {
+      setAnimation('pulse');
+    }, 7000);
+
+    return () => clearTimeout(timer);
+  }, [animation]);
 
   return (
     <section id="myskills">
@@ -60,16 +77,13 @@ export default function MySkills() {
               <div
                 className={classNames(s.Wave, s[waveAnimation], s[theme])}
               ></div>
-
               <div className={classNames(s.WaveImgField, s[waveAnimation])}>
-                {' '}
                 <ReactSVG src={Wave} />
               </div>
               <Container>
                 <h2 className={s.AnimationTitle}>
                   Skills, Tools & Technologies
                 </h2>
-
                 <ul
                   className={classNames(
                     s.IconSkillsList,
@@ -77,66 +91,15 @@ export default function MySkills() {
                     s[theme]
                   )}
                 >
-                  <li className={s.LargeSkillItem}>
-                    <ReactSVG src={React} />
-                    <h5>React</h5>
-                  </li>
-
-                  <li className={s.LargeSkillItem}>
-                    <ReactSVG src={JavaScript} />
-                    <h5>JavaScript</h5>
-                  </li>
-
-                  <li className={s.SmallSkillItem}>
-                    <ReactSVG src={Bootstrap} />
-                    <h5>Bootstrap</h5>
-                  </li>
-                  <li className={s.LargeSkillItem}>
-                    <ReactSVG src={Css} />
-                    <h5>Css</h5>
-                  </li>
-                  <li className={s.SmallSkillItem}>
-                    <ReactSVG src={Figma} />
-                    <h5>Figma</h5>
-                  </li>
-                  <li className={s.SmallSkillItem}>
-                    <ReactSVG src={Git} />
-                    <h5>Git</h5>
-                  </li>
-
-                  <li className={s.SmallSkillItem}>
-                    <ReactSVG src={Github} />
-                    <h5>Github</h5>
-                  </li>
-                  <li className={s.LargeSkillItem}>
-                    <ReactSVG src={Html} />
-                    <h5>HTML5</h5>
-                  </li>
-                  <li className={s.MediumSkillItem}>
-                    <ReactSVG src={Redux} />
-                    <h5>Redux</h5>
-                  </li>
-                  <li className={s.MediumSkillItem}>
-                    <ReactSVG src={ResponsiveDesign} />
-                    <h5>Responsive Design</h5>
-                  </li>
-                  <li className={s.MediumSkillItem}>
-                    <ReactSVG src={RestApi} />
-                    <h5>REST Api</h5>
-                  </li>
-                  <li className={s.MediumSkillItem}>
-                    <ReactSVG src={Sass} />
-                    <h5>Sass</h5>
-                  </li>
-                  <li className={s.MediumSkillItem}>
-                    <ReactSVG src={ReactRouter} />
-                    <h5>ReactRouter</h5>
-                  </li>
-
-                  <li className={s.MediumSkillItem}>
-                    <ReactSVG src={VsCode} />
-                    <h5>VsCode</h5>
-                  </li>
+                  {skills.map(({ icon, name, size }) => (
+                    <li
+                      key={name}
+                      className={classNames(s[`${size}SkillItem`])}
+                    >
+                      <ReactSVG src={icon} />
+                      <h5>{name}</h5>
+                    </li>
+                  ))}
                 </ul>
               </Container>
             </>
@@ -156,18 +119,19 @@ export default function MySkills() {
                   src={Avatar}
                   width="250"
                   height="190"
-                  alt="avatar"
+                  alt="Avatar of the developer"
                 />
                 <span className={s.FirstSpan}>Who I am?</span>
                 <span className={s.SecondSpan}>What I can do?</span>
                 <div className={classNames(s.ButtonField, s[theme])}>
-                  <button
-                    className={classNames(s.MySkillsButton, s[theme])}
+                  <motion.button
+                    whileTap={{ scale: 0.9 }}
+                    whileHover={{ scale: 1.05 }}
                     onClick={handleClick}
-                    type="button"
+                    className={classNames(s.MySkillsButton, s[theme])}
                   >
                     Just do it
-                  </button>
+                  </motion.button>
                   <ReactSVG src={Cursor} />
                 </div>
               </motion.div>

@@ -101,7 +101,7 @@ export default function Navigate() {
               <li className={s.NavItem}>
                 <a
                   className={s.NavLink}
-                  href="https://drive.google.com/file/d/1pwrOSA1UXfNecsBq13RNPQmFNMDamkg1/view?usp=sharing"
+                  href="https://drive.google.com/file/d/156zFzGpLakmm5lWaw97sZfmtyOvBjtJ5/view?usp=sharing"
                   target="_blank"
                   rel="noreferrer"
                 >

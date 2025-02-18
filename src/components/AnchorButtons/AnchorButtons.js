@@ -1,19 +1,31 @@
 import { useContext, useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import classNames from 'classnames';
 import s from './AnchorButton.module.scss';
 
 import { ThemeContext } from 'components/BodyTheme/BodyTheme';
 
+const sections = [
+  { id: 'bio', label: 'Bio', short: 'B' },
+  { id: 'aboutme', label: 'About me', short: 'A' },
+  { id: 'myskills', label: 'Skills', short: 'S' },
+  { id: 'myprojects', label: 'Projects', short: 'P' },
+  { id: 'mycontact', label: 'Contacts', short: 'C' },
+];
+
 export default function AnchorButtons() {
   const { theme } = useContext(ThemeContext);
   const [currentSection, setCurrentSection] = useState(null);
+  const [hoveredSection, setHoveredSection] = useState(null);
 
   const handleScroll = () => {
-    const sections = document.querySelectorAll('section');
+    const sectionsElements = document.querySelectorAll('section');
     const headerHeight = 94;
-    sections.forEach(section => {
+
+    sectionsElements.forEach(section => {
       const sectionTop = section.offsetTop - headerHeight;
       const sectionHeight = section.clientHeight;
+
       if (
         window.scrollY >= sectionTop &&
         window.scrollY < sectionTop + sectionHeight
@@ -33,56 +45,33 @@ export default function AnchorButtons() {
   return (
     <div className={s.AnchorButtonsField}>
       <ul>
-        <li>
-          <a
-            className={classNames(s.ButtonLink, s[theme], {
-              [s.active]: currentSection === 'bio',
-            })}
-            href="#bio"
+        {sections.map(({ id, label, short }) => (
+          <li
+            key={id}
+            onMouseEnter={() => setHoveredSection(id)}
+            onMouseLeave={() => setHoveredSection(null)}
           >
-            <span>B</span>
-          </a>
-        </li>
-        <li>
-          <a
-            className={classNames(s.ButtonLink, s[theme], {
-              [s.active]: currentSection === 'aboutme',
-            })}
-            href="#aboutme"
-          >
-            <span>A</span>
-          </a>
-        </li>
-        <li>
-          <a
-            className={classNames(s.ButtonLink, s[theme], {
-              [s.active]: currentSection === 'myskills',
-            })}
-            href="#myskills"
-          >
-            <span>S</span>
-          </a>
-        </li>
-        <li>
-          <a
-            className={classNames(s.ButtonLink, s[theme], {
-              [s.active]: currentSection === 'myprojects',
-            })}
-            href="#myprojects"
-          >
-            <span>P</span>
-          </a>
-        </li>
-        <li>
-          <a
-            className={classNames(s.ButtonLink, s[theme], {
-              [s.active]: currentSection === 'mycontact',
-            })}
-            href="#mycontact"
-          >
-            <span>C</span>
-          </a>
-        </li>
+            {hoveredSection === id && (
+              <motion.div
+                className={s.Tooltip}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -5 }}
+                transition={{ duration: 0.3 }}
+              >
+                {label}
+              </motion.div>
+            )}
+            <a
+              className={classNames(s.ButtonLink, s[theme], {
+                [s.active]: currentSection === id,
+              })}
+              href={`#${id}`}
+            >
+              <span>{short}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   );

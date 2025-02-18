@@ -27,7 +27,8 @@
 
 .AnimationTitle {
     .MySkillsSection.afterAnimate & {
-        animation: opacityTitle 5s linear;
+      animation: opacityTitle 5s linear;
+      font-size: 35px;
     }
 }
 
@@ -110,7 +111,7 @@
         background-size: 700px;
         background-position: top -50px right 300px;
     }
-    
+
 }
 
 .ButtonField {
@@ -119,7 +120,7 @@
             position: absolute;
             bottom: 205px;
             left: 475px;
-    
+
             width: 35px;
             height: 35px;
             fill: $dark-plum;
@@ -129,7 +130,7 @@
                     bottom: -25px;
                     left: 180px;
                 }
-                                
+
             @media screen and (min-width: $tablet) and (max-width: 1179px) {
                 bottom: -25px;
                 left: 300px;
@@ -140,7 +141,7 @@
         fill: $accent-color;
         }
 }
-    
+
 .MySkillsButton {
     margin-top: 320px;
     margin-left: 300px;
@@ -291,7 +292,7 @@
                 top: 560px;
                 left: 560px;
             }
-         
+
     }
 // Bootstrap
      & li:nth-child(3){

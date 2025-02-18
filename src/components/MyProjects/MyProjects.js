@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import s from './MyProjects.module.scss';
 
@@ -21,11 +21,6 @@ import ReactProductCatalogGif from '../../images/react-product-catalog.gif';
 export default function MyProjects() {
   const ref = useRef(null);
   const isInView = useInView(ref);
-  // const [showGif, setShowGif] = useState(false);
-
-  // const toggleGif = () => {
-  //   setShowGif(!showGif);
-  // };
 
   return (
     <section ref={ref} className={s.MyProjectsField} id="myprojects">

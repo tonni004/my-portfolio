@@ -63,9 +63,20 @@ export default function AboutMe() {
                 work, and I put in every effort to ensure that the final outcome
                 satisfies my creative spirit. This hobby has blossomed into a
                 dream that I'm determined to shape my future with.
-              </p>
-
-              <p className={s.AboutMeText}>
+                <br />
+                <br />I participated in the{' '}
+                <a
+                  href="https://inscience.io/be-2022/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <span className={s.BoldSpan}>БУДЬ/BE</span>
+                </a>{' '}
+                project by <span className={s.BoldSpan}>Inscience</span> as a
+                mentee, successfully completing the program and winning a grant
+                for further education to enhance my development skills.
+                <br />
+                <br />
                 While I'm looking forward to gaining experience in commercial
                 projects, I focus on expressing my creativity through pet
                 projects.
@@ -83,16 +94,7 @@ export default function AboutMe() {
                       <ReactSVG className={s.ContactIcon} src={Telegram} />
                     </a>
                   </li>
-                  {/* <li className={classNames(s.ContactItem, s[theme])}>
-                    <a
-                      href="https://www.instagram.com/t.onni_/"
-                      aria-label="Me on Instagram"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <ReactSVG className={s.ContactIcon} src={Instagram} />
-                    </a>
-                  </li> */}
+
                   <li className={classNames(s.ContactItem, s[theme])}>
                     <a
                       href="https://github.com/tonni004"
@@ -187,17 +189,26 @@ export default function AboutMe() {
                 </li>
               </ul>
             </div>
-            <div className={s.EducationField}>
+            <ul className={s.EducationField}>
               <h3 className={s.DivTitle}>Education</h3>
-              <p className={s.DivText}>
-                {' '}
-                Odesa National Polytechnic University
-              </p>
-              <p className={s.GrayText}>
-                Master's degree, Chemical technology and engineering
-              </p>
-              <p className={s.YearsText}>2014 - 2019</p>
-            </div>
+
+              <li>
+                <p className={s.DivText}> Mate Academy</p>
+                <p className={s.GrayText}>Full-stack developer</p>
+                <p className={s.YearsText}>2024 - Present</p>
+              </li>
+
+              <li>
+                <p className={s.DivText}>
+                  {' '}
+                  Odesa National Polytechnic University
+                </p>
+                <p className={s.GrayText}>
+                  Master's degree, Chemical technology and engineering
+                </p>
+                <p className={s.YearsText}>2014 - 2019</p>
+              </li>
+            </ul>
           </motion.div>
         </Section>
       </Container>
